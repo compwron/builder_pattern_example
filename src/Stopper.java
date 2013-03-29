@@ -1,0 +1,2 @@
+public class Stopper {
+}
