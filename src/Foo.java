@@ -33,4 +33,8 @@ public class Foo {
     public boolean isFluffy() {
         return fluffy;
     }
+
+    public FooCity getCity() {
+        return city;
+    }
 }

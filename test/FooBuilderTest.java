@@ -40,4 +40,27 @@ public class FooBuilderTest {
         assertEquals(stopper, copiedAndModifiedFoo.getStopper());
         assertTrue(copiedAndModifiedFoo.isGreen());
     }
+
+    @Test
+    public void fooBuilderHasAllAttributesOfOriginal(){
+        Starter starter = new Starter();
+        Stopper stopper = new Stopper();
+        boolean green = true;
+        boolean fluffy = true;
+        FooCity fooCity = new FooCity();
+
+        Foo originalFoo = new FooBuilder(starter, stopper)
+                .isGreen(true)
+                .isFluffy(true)
+                .city(fooCity)
+                .build();
+
+        Foo copiedFoo = new FooBuilder(originalFoo).build();
+
+        assertEquals(originalFoo.getStarter(), copiedFoo.getStarter());
+        assertEquals(originalFoo.getStopper(), copiedFoo.getStopper());
+        assertEquals(originalFoo.isGreen(), copiedFoo.isGreen());
+        assertEquals(originalFoo.isFluffy(), copiedFoo.isFluffy());
+        assertEquals(originalFoo.getCity(), copiedFoo.getCity());
+    }
 }

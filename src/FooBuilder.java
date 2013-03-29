@@ -14,6 +14,9 @@ public class FooBuilder {
     public FooBuilder(Foo original) {
         this.starter = original.getStarter();
         this.stopper = original.getStopper();
+        this.isGreen = original.isGreen();
+        this.isFluffy = original.isFluffy();
+        this.city = original.getCity();
     }
 
     public FooBuilder isGreen(boolean isGreen) {
